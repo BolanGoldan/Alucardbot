@@ -27,17 +27,17 @@ const MAX_FIELDS = 25;
 const IDLE_TIMEOUT = 900_000; 
 
 const COLOR_PRESETS = [
-    { label: 'Primary (Blue)',        value: '#336699', emoji: ':blue_circle: ' },
-    { label: 'Success (Green)',       value: '#57F287', emoji: ':green_circle: ' },
-    { label: 'Error (Red)',           value: '#ED4245', emoji: ':red_circle: ' },
-    { label: 'Warning (Yellow)',      value: '#FEE75C', emoji: ':yellow_circle: ' },
-    { label: 'Info (Bright Blue)',    value: '#3498DB', emoji: ':light_blue_heart: ' },
-    { label: 'Blurple (Discord)',     value: '#5865F2', emoji: ':purple_circle: ' },
-    { label: 'Fuchsia',              value: '#EB459E', emoji: ':hyacinth:' },
-    { label: 'Gold',                  value: '#F1C40F', emoji: ':coin: ' },
-    { label: 'White',                 value: '#FFFFFF', emoji: ':white_circle: ' },
-    { label: 'Dark',                  value: '#202225', emoji: ':black_circle: ' },
-    { label: 'Custom Hex...',         value: '__custom__', emoji: ' :heart: ' },
+    { label: 'Primary (Blue)',        value: '#336699', emoji: '' },
+    { label: 'Success (Green)',       value: '#57F287', emoji: '' },
+    { label: 'Error (Red)',           value: '#ED4245', emoji: '' },
+    { label: 'Warning (Yellow)',      value: '#FEE75C', emoji: '' },
+    { label: 'Info (Bright Blue)',    value: '#3498DB', emoji: '' },
+    { label: 'Blurple (Discord)',     value: '#5865F2', emoji: '' },
+    { label: 'Fuchsia',              value: '#EB459E', emoji: '' },
+    { label: 'Gold',                  value: '#F1C40F', emoji: '' },
+    { label: 'White',                 value: '#FFFFFF', emoji: '' },
+    { label: 'Dark',                  value: '#202225', emoji: '' },
+    { label: 'Custom Hex...',         value: '__custom__', emoji: '' },
 ];
 
 function isValidUrl(str) {
