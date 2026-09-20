@@ -27,17 +27,17 @@ const MAX_FIELDS = 25;
 const IDLE_TIMEOUT = 900_000; 
 
 const COLOR_PRESETS = [
-   { label: 'Primary (Blue)',        value: '#336699', emoji: 'undefined' },
-    { label: 'Success (Green)',       value: '#57F287', emoji: 'undefined' },
-    { label: 'Error (Red)',           value: '#ED4245', emoji: 'undefined' },
-    { label: 'Warning (Yellow)',      value: '#FEE75C', emoji: 'undefined' },
-    { label: 'Info (Bright Blue)',    value: '#3498DB', emoji: 'undefined' },
-    { label: 'Blurple (Discord)',     value: '#5865F2', emoji: 'undefined' },
-    { label: 'Fuchsia',              value: '#EB459E', emoji: 'undefined' },
-    { label: 'Gold',                  value: '#F1C40F', emoji: 'undefined' },
-    { label: 'White',                 value: '#FFFFFF', emoji: 'undefined' },
-    { label: 'Dark',                  value: '#202225', emoji: 'undefined' },
-    { label: 'Custom Hex...',         value: '__custom__', emoji: 'undefined' },
+    { label: 'Primary (Blue)',        value: '#336699', emoji: 'null' },
+    { label: 'Success (Green)',       value: '#57F287', emoji: 'null' },
+    { label: 'Error (Red)',           value: '#ED4245', emoji: 'null' },
+    { label: 'Warning (Yellow)',      value: '#FEE75C', emoji: 'null' },
+    { label: 'Info (Bright Blue)',    value: '#3498DB', emoji: 'null' },
+    { label: 'Blurple (Discord)',     value: '#5865F2', emoji: 'null' },
+    { label: 'Fuchsia',              value: '#EB459E', emoji: 'null' },
+    { label: 'Gold',                  value: '#F1C40F', emoji: 'null' },
+    { label: 'White',                 value: '#FFFFFF', emoji: 'null' },
+    { label: 'Dark',                  value: '#202225', emoji: 'null' },
+    { label: 'Custom Hex...',         value: '__custom__', emoji: 'null' },
 ];
 
 function isValidUrl(str) {
@@ -259,14 +259,13 @@ async function handleSetColor(selectInteraction, rootInteraction, state) {
         .setCustomId('eb_color_pick')
         .setPlaceholder('Choose a color...')
         .addOptions(
-            COLOR_PRESETS.map(c => 
+            COLOR_PRESETS.map(c =>
                 new StringSelectMenuOptionBuilder()
                     .setLabel(c.label)
                     .setValue(c.value)
                     .setEmoji(c.emoji)
                     .setDescription(c.value !== '__custom__' ? c.value : 'Enter your own #RRGGBB value'),
             ),
-            )
         );
 
     await selectInteraction.followUp({
@@ -280,9 +279,6 @@ async function handleSetColor(selectInteraction, rootInteraction, state) {
         ],
         components: [new ActionRowBuilder().addComponents(colorSelect)],
         flags: MessageFlags.Ephemeral,
-    });
-
-   
     });
 
     const colorCollector = rootInteraction.channel.createMessageComponentCollector({
