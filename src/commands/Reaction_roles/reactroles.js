@@ -398,7 +398,7 @@ async function rebuildLivePanelMessage(guild, panelData) {
                         label: r.name.substring(0, 100),
                         description: `Add/remove the ${r.name} role`.substring(0, 100),
                         value: r.id,
-                        emoji: '🎭',
+                        emoji: '✨',
                     })),
                 ),
         );
@@ -552,7 +552,7 @@ async function repostReactionRolePanel(guild, panelData, client, guildId, fallba
                     label: role.name.substring(0, 100),
                     description: `Add/remove the ${role.name} role`.substring(0, 100),
                     value: role.id,
-                    emoji: '🎭',
+                    emoji: '✨',
                 })),
             ),
     );
