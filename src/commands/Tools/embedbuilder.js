@@ -263,7 +263,9 @@ async function handleSetColor(selectInteraction, rootInteraction, state) {
                 new StringSelectMenuOptionBuilder()
                     .setLabel(c.label)
                     .setValue(c.value)
-                    .setDescription(c.value !== '__custom__' ? c.value : 'Enter your own #RRGGBB value')
+                    .setEmoji(c.emoji)
+                    .setDescription(c.value !== '__custom__' ? c.value : 'Enter your own #RRGGBB value'),
+            ),
             )
         );
 
@@ -280,19 +282,7 @@ async function handleSetColor(selectInteraction, rootInteraction, state) {
         flags: MessageFlags.Ephemeral,
     });
 
-    // ... rest of handleSetColor remains the same
-}
-    await selectInteraction.followUp({
-        embeds: [
-            new EmbedBuilder()
-                .setTitle('Set Color')
-                .setDescription(
-                    'Select a preset color or choose **Custom Hex** to enter your own `#RRGGBB` value.',
-                )
-                .setColor(getColor('info')),
-        ],
-        components: [new ActionRowBuilder().addComponents(colorSelect)],
-        flags: MessageFlags.Ephemeral,
+   
     });
 
     const colorCollector = rootInteraction.channel.createMessageComponentCollector({
