@@ -451,12 +451,12 @@ export const botConfig = {
     // Core systems.
     economy: false,
     leveling: true,
-    moderation: false,
-    logging: false,
+    moderation: true,
+    logging: true,
     welcome: true,
 
     // Community engagement systems.
-    tickets: false,
+    tickets: true,
     giveaways: false,
     birthday: true,
     counter: false,
