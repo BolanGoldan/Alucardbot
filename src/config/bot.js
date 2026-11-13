@@ -462,7 +462,7 @@ export const botConfig = {
     counter: false,
 
     // Security and self-service systems.
-    verification: false,
+    verification: true,
     reactionRoles: true,
     joinToCreate: true,
 
